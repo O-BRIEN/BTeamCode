@@ -89,13 +89,11 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
 
-  rightMotor.rotateFor(reverse, 2, rotationUnits::deg);
-  leftMotor.startRotateFor(reverse, 2, rotationUnits::deg);
+  Lateral(forward, 2, turns, 100, velocityUnits::pct);
 
   vex::task::sleep(1000);
 
-  rightMotor.rotateFor(reverse, 2, rotationUnits::deg);
-  leftMotor.startRotateFor(reverse, 2, rotationUnits::deg);
+  Lateral(reverse, 2, turns, 100, velocityUnits::pct);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -116,8 +114,9 @@ void usercontrol(void) {
                    percentUnits::pct);
     rightMotor.spin(forward, Controller1.Axis3.position() - Controller1.Axis1.position(),                  
                    percentUnits::pct);
-    if (Controller1.ButtonX.pressing())
-     {
+
+
+    if (Controller1.ButtonX.pressing()) {
 
       liftMotor.spin(fwd, 100, pct);
 
@@ -127,19 +126,15 @@ void usercontrol(void) {
     } else {
       liftMotor.stop();
     }
+
+
     if (Controller1.ButtonL1.pressing()) {
       rightIntakeMotor.spin(forward, 100, pct);
       leftIntakeMotor.spin(forward, 100, pct);
-    }
-
-    else if (Controller1.ButtonR1.pressing()) {
-
+    }else if (Controller1.ButtonR1.pressing()) {
       leftIntakeMotor.spin(reverse, 100, pct);
       rightIntakeMotor.spin(reverse, 100, pct);
-
-    }
-
-    else {
+    } else {
       leftIntakeMotor.stop();
       rightIntakeMotor.stop();
     }
