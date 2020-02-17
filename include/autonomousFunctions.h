@@ -1,4 +1,4 @@
-
+#include "robot-config.h"
 
 void Lateral(directionType direction, double amount, rotationUnits unit, double speed, velocityUnits vUnit) {
   rightMotor.startRotateFor(direction, amount, unit, speed, vUnit);
