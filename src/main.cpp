@@ -3,7 +3,7 @@
 /*    Module:       main.cpp                                                  */
 /*    Author:       VEX                                                       */
 /*    Created:      Thu Sep 26 2019                                           */
-/*    Description:  Competition Template                                      */
+/*    Description:  D Team's robot code!                                      */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
@@ -64,7 +64,7 @@ void autonomous(void) {
 
   Lateral(forward, 2, turns, 100, velocityUnits::pct);
 
-  vex::task::sleep(1000);
+  vex::task::sleep(3000);
 
   Lateral(reverse, 2, turns, 100, velocityUnits::pct);
 }
